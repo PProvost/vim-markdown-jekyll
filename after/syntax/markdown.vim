@@ -8,6 +8,7 @@ syntax match Comment /\%^---\_.\{-}---$/ contains=@Spell
 
 " Match Liquid Tags and Filters
 syntax match liquidTag /{[{%].*[}%]}/
+syntax region liquidTagRegion start="{%\s*highlight\s\+\w\+\s*%}" end="\s*endhighlight\s*%}" contains=codeblockContents keepend
 
 " Match the Octopress Backtick Code Block line
 syntax match codeblockContents contained /^\(```\)\@!.*/
